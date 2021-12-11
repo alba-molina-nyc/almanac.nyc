@@ -8,7 +8,7 @@ This is an example project one for the SEIR Immersive Program
 - JavaScript/jQuery
 
 # Screenshots 
-
+![screenshot 1](./screenshot.png)
 # Getting Started 
 [Click here](#) to see the Deployed Project 
 
