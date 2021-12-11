@@ -1,3 +1,26 @@
+* {
+    box-sizing: border-box;
+    border: 1px dotted red;
+
+}
+
+body {
+    font-family: Helvetica cursive;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    display: flex;
+    align-items: center;
+    height: 3.125rem;
+}
 h1 {
     color: blue;
 }
+
+main {
+    flex-grow: 1;
+}
+
