@@ -1,1 +1,7 @@
-alert('JS file loaded')
+// Variables and Constants
+
+// Cached Element References
+
+// Event Listeners
+
+// Functions
