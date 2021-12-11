@@ -17,10 +17,20 @@ header, footer {
     height: 3.125rem;
 }
 h1 {
-    color: blue;
+    color: black;
 }
 
 main {
     flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+article { 
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: 9.375rem;
+    width: 18.75rem;
+    border-radius: 7px;
+}
