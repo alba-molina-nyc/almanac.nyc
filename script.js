@@ -47,6 +47,11 @@ const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
                     console.log('success')
                     let resources = JSON.parse(this.response)
                     console.log(resources)
+                    resources.forEach(resource => {
+                        const resourceCard = document.createElement('div')
+                        resourceCard.innerHTML = resource.organizationname
+                        document.getElementById('feed').appendChild(resourceCard)
+                    })
                 }
             }
 
