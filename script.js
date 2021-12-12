@@ -10,7 +10,7 @@ const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
 // Event Listeners
 
 // Functions
-    function getResourceData() {
+    function showResources() {
         $.ajax(`${BASE_URL}`)
         .then(function(data) {
             resourceData = data;
@@ -25,7 +25,7 @@ const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
                 <div class="col s12 m6" id="article">
                   <div class="card-panel teal" id="article1">
                     <span class="white-text"> <h4>${resource.organizationname}</h4>
-                        <p>${resource.url}</p>
+                        <a target="_blank" href="${resource.url}">${resource.organizationname} Website </a>
                         <p>${resource.address1}</p>
                     </span>
                   </div>
@@ -36,26 +36,3 @@ const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
             $('main').html(html);
         }
 
-
-        function showResources() {
-            let xhr = new XMLHttpRequest()
-
-            xhr.open('GET', `${BASE_URL}`, true)
-
-            xhr.onload = function() {
-                if (xhr.status == 200) {
-                    console.log('success')
-                    let resources = JSON.parse(this.response)
-                    console.log(resources)
-                    resources.forEach(resource => {
-                        const resourceCard = document.createElement('div')
-                        resourceCard.innerHTML = resource.organizationname
-                        document.getElementById('feed').appendChild(resourceCard)
-                    })
-                }
-            }
-
-            xhr.send()
-        }
-     
-    
