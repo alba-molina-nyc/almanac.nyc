@@ -45,6 +45,8 @@ const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
             xhr.onload = function() {
                 if (xhr.status == 200) {
                     console.log('success')
+                    let resources = JSON.parse(this.response)
+                    console.log(resources)
                 }
             }
 
