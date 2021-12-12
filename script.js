@@ -10,39 +10,30 @@ const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
 // Event Listeners
 
 // Functions
-
-function getResourceData() {
-    $.ajax(`${BASE_URL}`)
-    .then(function(data) {
-        resourceData = data;
-        render();
-    }, function(error) {
-        console.log(error);
-    });
-}
-    function render() {
-        const html = resourceData.map(function(resource) {
-            return `<article>
-            <h1>${resource.organizationname}</h1>
-            <p>${resource.url}</p>
-        </article>`;
+    function getResourceData() {
+        $.ajax(`${BASE_URL}`)
+        .then(function(data) {
+            resourceData = data;
+            render();
+        }, function(error) {
+            console.log(error);
         });
-
-        $('main').html(html);
     }
- 
-
-
-
-// function getData() {
-//     $.ajax(`${BASE_URL}`)
-//     .then(function(data){
-//         resourceData = data;
-//         alert("Retrieved " + data.length + " records from the dataset!");
-//         console.log(data);
-//     }, function(error) {
-//         alert("Error could not retrieve data");
-//         console.log(error);
-//     });
-// }
-
+        function render() {
+            const html = resourceData.map(function(resource) {
+                return `<div class="row">
+                <div class="col s12 m6" id="article">
+                  <div class="card-panel teal" id="article1">
+                    <span class="white-text"> <h4>${resource.organizationname}</h4>
+                        <p>${resource.url}</p>
+                        <p>${resource.address1}</p>
+                    </span>
+                  </div>
+                </div>
+              </div>`;
+            });
+    
+            $('main').html(html);
+        }
+     
+    
