@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
 }
 
@@ -46,4 +46,15 @@ article {
     height: 9.375rem;
     border-radius: 7px;
     border: 1px solid #423f3f;
-}
+} */
+
+/* sticky footer */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
