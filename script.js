@@ -21,10 +21,20 @@ function getResourceData() {
         console.log(error);
     });
 }
+    function render() {
+        const html = resourceData.map(function(resource) {
+            return `<article>
+            <h1>${resource.organizationname}</h1>
+            <p>${resource.address1}</p>
+            <p>${resource.url}</p>
+        </article>`;
+        });
 
-function render() {
-    console.log(resourceData)
-}
+        $('main').html(html);
+    }
+ 
+
+
 
 // function getData() {
 //     $.ajax(`${BASE_URL}`)
