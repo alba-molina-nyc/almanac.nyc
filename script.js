@@ -35,5 +35,20 @@ const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
     
             $('main').html(html);
         }
+
+
+        function showResources() {
+            let xhr = new XMLHttpRequest()
+
+            xhr.open('GET', `${BASE_URL}`, true)
+
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    console.log('success')
+                }
+            }
+
+            xhr.send()
+        }
      
     
