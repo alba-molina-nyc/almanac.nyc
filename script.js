@@ -7,7 +7,6 @@ const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
 // Cached Element References
 
 
-
 // Event Listeners
 
 // Functions
@@ -25,7 +24,6 @@ function getResourceData() {
         const html = resourceData.map(function(resource) {
             return `<article>
             <h1>${resource.organizationname}</h1>
-            <p>${resource.address1}</p>
             <p>${resource.url}</p>
         </article>`;
         });
