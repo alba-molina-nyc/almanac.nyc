@@ -6,6 +6,7 @@ const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
 
 const $organizationname = $('#organizationname');
 
+const $url = $('#url');
 // Cached Element References
 
 // Event Listeners
@@ -45,6 +46,8 @@ const $organizationname = $('#organizationname');
  function searchOrganizationName() {
      let chosenOrganizationName = $organizationname.val();
     $.ajax(`${BASE_URL}?organizationname=${chosenOrganizationName}`).then((data) => {
+        $organizationname.text(data.organizationname)
+        $url.text(data.URL);
         console.log(data + 'data for searchorgname works');
     }, (error) => {
         console.log('bad request', error);
