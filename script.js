@@ -7,6 +7,8 @@ const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
 const $organizationname = $('#organizationname');
 
 const $url = $('#url');
+
+const $input = $('input[type="text"]');
 // Cached Element References
 
 // Event Listeners
@@ -43,15 +45,9 @@ const $url = $('#url');
         // -------
         // -----
 
- function searchOrganizationName() {
-     let chosenOrganizationName = $organizationname.val();
-    $.ajax(`${BASE_URL}?organizationname=${chosenOrganizationName}`).then((data) => {
-        $organizationname.text(data.organizationname)
-        $url.text(data.URL);
-        console.log(data + 'data for searchorgname works');
-    }, (error) => {
-        console.log('bad request', error);
-    }
-    )
+        let description_value= '';
 
- }
+        const promise = $.ajax(`${BASE_URL}?description=Traumatic Brain Injury/Coma Recovery`).done(function(data) {
+            alert("Retrieved " + data.length + " records from the dataset!");
+            console.log(data);
+          });
