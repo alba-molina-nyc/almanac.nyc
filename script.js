@@ -2,10 +2,6 @@
 
 let resourceData;
 
-let allData;
-
-let allOrganizationNames = [];
-
 const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
 
 const $search_value = $('#myInput')
@@ -48,20 +44,3 @@ const $search_value = $('#myInput')
         // -----
 
    
-
-
-const $myInput = $('myInput');        
-
-$myInput.on('keyup', searchData);
-        
-function searchData() {
-    let search_value = $myInput;
-    $.ajax(`${BASE_URL}?organizationname=${search_value}`).then(function(data) {
-        resourceData = data;
-        console.log(data)
-        render();
-    }, function(error) {
-        console.log(error);
-    });
-}
-

@@ -33,21 +33,14 @@
 <main>
   <h1>NYC Women's Resource Network Database</h1>
   <a class="waves-effect waves-light btn-small"onclick=showResources()>Show All Resources</a>
+  <h2>Filterable Cards</h2>
+<p>Type something in the input field to search the cards for:</p>  
 
-<br><br>
-    <div class="row">
-      <div class="col s12 m6" id="article">
-        <div class="card-panel teal" id="article1">
-          <span class="white-text" id="myCard">
-            
-            <h4 id="organizationName">Organization Name</h4>
-              <h4><a>Organization website URL</a></h4>
-              <h4><p>Organization address</p></h4>
-          </span>
-        </div>
-      </div>
-    </div>
-</main>
+<input id="myInput" type="text" placeholder="Search.." onkeyup=searchData()>
+<div id="mySearchResults">
+  <h1>search result here</h1>
+</div>
+
 
   <!-- footer -->
     <footer class="page-footer">
