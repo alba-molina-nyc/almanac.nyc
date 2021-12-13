@@ -4,8 +4,7 @@ let resourceData;
 
 const BASE_URL = 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json';
 
-const $search_value = $('#myInput')
-
+const $organizationname = $('#organizationname');
 
 // Cached Element References
 
@@ -43,4 +42,13 @@ const $search_value = $('#myInput')
         // -------
         // -----
 
-   
+ function searchOrganizationName() {
+     let chosenOrganizationName = $organizationname.val();
+    $.ajax(`${BASE_URL}?organizationname=${chosenOrganizationName}`).then((data) => {
+        console.log(data + 'data for searchorgname works');
+    }, (error) => {
+        console.log('bad request', error);
+    }
+    )
+
+ }
